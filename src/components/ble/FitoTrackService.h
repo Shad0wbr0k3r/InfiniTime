@@ -35,7 +35,7 @@ namespace Pinetime {
       static const char EVENT_FITOTRACK_OPEN = 0xe0;
 
     private:
-      struct ble_gatt_chr_def characteristicDefinition[14];
+      struct ble_gatt_chr_def characteristicDefinition[5];
       struct ble_gatt_svc_def serviceDefinition[2];
 
       uint16_t eventHandle {};
