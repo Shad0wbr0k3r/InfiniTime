@@ -8,6 +8,7 @@
 
 namespace Pinetime {
   namespace Controllers {
+    class FitoTrackService;
     class Battery;
     class Ble;
   }
@@ -16,6 +17,7 @@ namespace Pinetime {
       class FitoTrack : public Screen {
       public:
         FitoTrack(DisplayApp* app,
+                  Controllers::FitoTrackService& fitoTrack,
                   Controllers::DateTime& dateTimeController,
                   Controllers::Battery& batteryController,
                   Controllers::Ble& bleController);
@@ -41,6 +43,7 @@ namespace Pinetime {
         lv_obj_t* label_durationTitle;
         lv_obj_t* label_durationValue;
 
+        Controllers::FitoTrackService& fitoTrackService;
         Controllers::DateTime& dateTimeController;
 
         lv_task_t* taskRefresh;

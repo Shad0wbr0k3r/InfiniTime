@@ -478,7 +478,7 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       currentScreen = std::make_unique<Screens::Steps>(this, motionController, settingsController);
       break;
     case Apps::FitoTrack:
-      currentScreen = std::make_unique<Screens::FitoTrack>(this, dateTimeController, batteryController, bleController);
+      currentScreen = std::make_unique<Screens::FitoTrack>(this, systemTask->nimble().fitoTrack(), dateTimeController, batteryController, bleController);
       break;
   }
   currentApp = app;
