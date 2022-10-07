@@ -145,6 +145,9 @@ void FitoTrack::Refresh() {
     int index = speed.find('.');
 
     if ((size_t) index != std::string::npos) {
+      if (index == 1) lv_obj_align(label_speedValueSmall, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 153, 77);
+      else lv_obj_align(label_speedValueSmall, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 178, 77);
+
       lv_label_set_text_fmt(label_speedValue, "%2s", speed.substr(0, index).c_str());
       lv_label_set_text(label_speedValueSmall, speed.substr(index).c_str());
     } else {
@@ -157,6 +160,9 @@ void FitoTrack::Refresh() {
     int index = distance.find('.');
 
     if ((size_t) index != std::string::npos) {
+      if (index == 1) lv_obj_align(label_distanceValueSmall, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 33, -33);
+      else lv_obj_align(label_distanceValueSmall, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 58, -33);
+
       lv_label_set_text_fmt(label_distanceValue, "%2s", distance.substr(0, index).c_str());
       lv_label_set_text(label_distanceValueSmall, distance.substr(index).c_str());
     } else {
