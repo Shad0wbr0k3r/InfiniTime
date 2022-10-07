@@ -33,7 +33,7 @@ FitoTrack::FitoTrack(DisplayApp* app,
   lv_obj_align(label_hrBleIcon, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 10 , 35);
 
   label_hrBleValue = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_hrBleValue, "123");
+  lv_label_set_text_static(label_hrBleValue, "-");
   lv_label_set_align(label_hrBleValue, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_hrBleValue, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 10, 65);
   lv_obj_set_style_local_text_color(label_hrBleValue, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, lv_color_hex(0xCE1B1B));
@@ -55,13 +55,13 @@ FitoTrack::FitoTrack(DisplayApp* app,
   lv_obj_align(label_speedTitle, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 130, 35);
 
   label_speedValue = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_speedValue, "32");
+  lv_label_set_text_static(label_speedValue, "0");
   lv_label_set_align(label_speedValue, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_speedValue, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 130, 65);
   lv_obj_set_style_local_text_font(label_speedValue, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_42);
 
   label_speedValueSmall = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_speedValueSmall, ".22");
+  lv_label_set_text_static(label_speedValueSmall, ".00");
   lv_label_set_align(label_speedValueSmall, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_speedValueSmall, lv_scr_act(), LV_ALIGN_IN_TOP_LEFT, 178, 77);
 
@@ -80,13 +80,13 @@ FitoTrack::FitoTrack(DisplayApp* app,
   lv_obj_align(label_distanceTitle, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 10, -80);
 
   label_distanceValue = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_distanceValue, "11");
+  lv_label_set_text_static(label_distanceValue, "0");
   lv_label_set_align(label_distanceValue, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_distanceValue, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 10, -45);
   lv_obj_set_style_local_text_font(label_distanceValue, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_42);
 
   label_distanceValueSmall = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_distanceValueSmall, ".55");
+  lv_label_set_text_static(label_distanceValueSmall, ".000");
   lv_label_set_align(label_distanceValueSmall, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_distanceValueSmall, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 58, -33);
 
@@ -103,7 +103,7 @@ FitoTrack::FitoTrack(DisplayApp* app,
   lv_obj_align(label_durationTitle, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 130, -80);
 
   label_durationValue = lv_label_create(lv_scr_act(), nullptr);
-  lv_label_set_text_static(label_durationValue, "00:15:42");
+  lv_label_set_text_static(label_durationValue, "00:00:00");
   lv_label_set_align(label_durationValue, LV_LABEL_ALIGN_CENTER);
   lv_obj_align(label_durationValue, lv_scr_act(), LV_ALIGN_IN_BOTTOM_LEFT, 130, -45);
   lv_obj_set_style_local_text_font(label_durationValue, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &jetbrains_mono_bold_20);
