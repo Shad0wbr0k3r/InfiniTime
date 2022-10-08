@@ -404,6 +404,7 @@ list(APPEND SOURCE_FILES
         displayapp/screens/Alarm.cpp
         displayapp/screens/Styles.cpp
         displayapp/screens/FitoTrack.cpp
+        displayapp/screens/LightControl.cpp
         displayapp/Colors.cpp
         displayapp/widgets/Counter.cpp
         displayapp/widgets/PageIndicator.cpp
@@ -617,6 +618,7 @@ set(INCLUDE_FILES
         displayapp/widgets/PageIndicator.h
         displayapp/widgets/StatusIcons.h
         displayapp/screens/FitoTrack.h
+        displayapp/screens/LightControl.h
         drivers/St7789.h
         drivers/SpiNorFlash.h
         drivers/SpiMaster.h

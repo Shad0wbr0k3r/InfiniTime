@@ -40,7 +40,8 @@ namespace Pinetime {
       SettingShakeThreshold,
       SettingBluetooth,
       Error,
-      FitoTrack
+      FitoTrack,
+      LightControl
     };
   }
 }

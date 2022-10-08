@@ -30,6 +30,7 @@
 #include "displayapp/screens/PassKey.h"
 #include "displayapp/screens/Error.h"
 #include "displayapp/screens/FitoTrack.h"
+#include "displayapp/screens/LightControl.h"
 
 #include "drivers/Cst816s.h"
 #include "drivers/St7789.h"
@@ -219,6 +220,9 @@ void DisplayApp::Refresh() {
                 break;
               case TouchEvents::SwipeRight:
                 LoadApp(Apps::QuickSettings, DisplayApp::FullRefreshDirections::RightAnim);
+                break;
+              case TouchEvents::SwipeLeft:
+                LoadApp(Apps::LightControl, DisplayApp::FullRefreshDirections::Right);
                 break;
               case TouchEvents::DoubleTap:
                 PushMessageToSystemTask(System::Messages::GoToSleep);
@@ -479,6 +483,10 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       break;
     case Apps::FitoTrack:
       currentScreen = std::make_unique<Screens::FitoTrack>(this, systemTask->nimble().fitoTrack(), dateTimeController, batteryController, bleController);
+      break;
+    case Apps::LightControl:
+      //currentScreen = std::make_unique<Screens::LightControl>(this, systemTask->nimble().lightControl(), bleController);
+      currentScreen = std::make_unique<Screens::LightControl>(this, bleController);
       break;
   }
   currentApp = app;
