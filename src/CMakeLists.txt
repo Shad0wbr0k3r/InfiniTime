@@ -466,6 +466,7 @@ list(APPEND SOURCE_FILES
         components/ble/ImmediateAlertService.cpp
         components/ble/ServiceDiscovery.cpp
         components/ble/HeartRateService.cpp
+        components/ble/LightControlService.cpp
         components/ble/MotionService.cpp
         components/ble/FitoTrackService.cpp
         components/firmwarevalidator/FirmwareValidator.cpp
@@ -534,6 +535,7 @@ list(APPEND RECOVERY_SOURCE_FILES
         components/ble/ServiceDiscovery.cpp
         components/ble/NavigationService.cpp
         components/ble/HeartRateService.cpp
+        components/ble/LightControlService.cpp
         components/ble/MotionService.cpp
         components/ble/FitoTrackService.cpp
         components/firmwarevalidator/FirmwareValidator.cpp
@@ -652,6 +654,7 @@ set(INCLUDE_FILES
         components/ble/ServiceDiscovery.h
         components/ble/BleClient.h
         components/ble/HeartRateService.h
+        components/ble/LightControlService.h
         components/ble/MotionService.h
         components/ble/FitoTrackService.h
         components/ble/weather/WeatherService.h

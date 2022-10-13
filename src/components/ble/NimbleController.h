@@ -22,6 +22,7 @@
 #include "components/ble/ServiceDiscovery.h"
 #include "components/ble/MotionService.h"
 #include "components/ble/FitoTrackService.h"
+#include "components/ble/LightControlService.h"
 #include "components/ble/weather/WeatherService.h"
 #include "components/fs/FS.h"
 
@@ -71,6 +72,9 @@ namespace Pinetime {
       Pinetime::Controllers::FitoTrackService& fitoTrack() {
         return fitoTrackService;
       };
+      Pinetime::Controllers::LightControlService& lightControl() {
+        return lightControlService;
+      };
 
       uint16_t connHandle();
       void NotifyBatteryLevel(uint8_t level);
@@ -106,6 +110,7 @@ namespace Pinetime {
       BatteryInformationService batteryInformationService;
       ImmediateAlertService immediateAlertService;
       HeartRateService heartRateService;
+      LightControlService lightControlService;
       MotionService motionService;
       FSService fsService;
       ServiceDiscovery serviceDiscovery;

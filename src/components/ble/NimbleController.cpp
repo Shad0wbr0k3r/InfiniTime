@@ -50,6 +50,7 @@ NimbleController::NimbleController(Pinetime::System::SystemTask& systemTask,
     batteryInformationService {batteryController},
     immediateAlertService {systemTask, notificationManager},
     heartRateService {systemTask, heartRateController},
+    lightControlService {systemTask},
     motionService {systemTask, motionController},
     fsService {systemTask, fs},
     serviceDiscovery({&currentTimeClient, &alertNotificationClient}) {
@@ -100,6 +101,7 @@ void NimbleController::Init() {
   batteryInformationService.Init();
   immediateAlertService.Init();
   heartRateService.Init();
+  lightControlService.Init();
   motionService.Init();
   fsService.Init();
 
@@ -326,12 +328,15 @@ int NimbleController::OnGAPEvent(ble_gap_event* event) {
       if (event->subscribe.reason == BLE_GAP_SUBSCRIBE_REASON_TERM) {
         heartRateService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
         motionService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
+        lightControlService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
       } else if (event->subscribe.prev_notify == 0 && event->subscribe.cur_notify == 1) {
         heartRateService.SubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
         motionService.SubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
+        lightControlService.SubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
       } else if (event->subscribe.prev_notify == 1 && event->subscribe.cur_notify == 0) {
         heartRateService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
         motionService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
+        lightControlService.UnsubscribeNotification(event->subscribe.conn_handle, event->subscribe.attr_handle);
       }
       break;
 
